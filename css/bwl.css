@@ -1,0 +1,26 @@
+#carousel-container{
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+img {
+    display: block;
+    max-height:300px;
+    height: auto;
+    width: auto;
+    object-fit: cover;
+  }
+#main_page{
+    display: block;
+}
+#reservation_page{
+    display: none;
+}
+#page_container{
+    margin-top: 5%;
+    margin-inline: 5%;
+}
+#footer{
+    margin-inline: 5%;
+    color: gray;
+    font-size: 0.8rem;
+}
