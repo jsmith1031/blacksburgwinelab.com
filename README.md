@@ -1,2 +1,2 @@
 # blacksburgwinelab.com
-BlacksburgWineLab Websiute
+BlacksburgWineLab Website
