@@ -12,6 +12,18 @@ img {
 #main_page{
     display: block;
 }
+#menu_page{
+    display: hidden;
+}
+#region_page{
+    display: none;
+}
+#party_page{
+    display: none;
+}
+#contact_page{
+    display: none;
+}
 #reservation_page{
     display: none;
 }
