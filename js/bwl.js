@@ -4,19 +4,20 @@ function fixImage(size, image){
 
 }
 function newPage(id){
-  var ids = ["main_page", "menu_page", "reservation_page"];
+  var ids = ["main_page", "menu_page", "reservation_page", "region_page", "party_page", "contact_page"];
   var a = document.getElementById("main_page");
   for (i = 0; i < ids.length; i++) {
     var temp = document.getElementById(ids[i]);
     if (temp === id){
-      temp.style.dizsplay = "block";
+      temp.style.display = "block";
+      console.log(temp);
     } else {
       temp.style.display = "none";
-      console.log(temp);
     }
   }
   console.log(id);
 }
+/*
 function loadingElement() {
     var a = document.getElementById("main_page");
     var b = document.getElementById("menu_page");
@@ -34,7 +35,7 @@ function loadingElement() {
       b.style.display = "block";
       c.style.display = "block";
     }
-  }
+  }*/
 //document.getElementById("imageOne").src = "https://i.redd.it/yw09nlyl9lt31.jpg";
 /*
 function swap(){
