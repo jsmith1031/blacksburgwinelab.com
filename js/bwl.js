@@ -3,6 +3,20 @@ function fixImage(size, image){
     console.log("Image Size:" & size & "Image height:" & height);
 
 }
+function newPage(id){
+  var ids = ["main_page", "menu_page", "reservation_page"];
+  var a = document.getElementById("main_page");
+  for (i = 0; i < ids.length; i++) {
+    var temp = document.getElementById(ids[i]);
+    if (temp === id){
+      temp.style.dizsplay = "block";
+    } else {
+      temp.style.display = "none";
+      console.log(temp);
+    }
+  }
+  console.log(id);
+}
 function loadingElement() {
     var a = document.getElementById("main_page");
     var b = document.getElementById("menu_page");
