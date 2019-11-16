@@ -25,7 +25,14 @@ function checkDate(Date){
   }
   return valid_Date;
 }
-
+function submitReservation(){
+  var name = document.getElementById('name').value;
+  var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
+  var party = document.getElementById("size").value;
+  var date = document.getElementById("date").value;
+  
+}
 /*
 function loadingElement() {
     var a = document.getElementById("main_page");
