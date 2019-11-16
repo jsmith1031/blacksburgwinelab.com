@@ -17,6 +17,15 @@ function newPage(id){
   }
   console.log(id);
 }
+function checkDate(Date){
+  var today = new Date();
+  var valid_Date = true;
+  if(Date < today){
+    valid_Date = false;
+  }
+  return valid_Date;
+}
+
 /*
 function loadingElement() {
     var a = document.getElementById("main_page");
