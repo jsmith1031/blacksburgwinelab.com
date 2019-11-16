@@ -24,18 +24,18 @@ Description:    A mockup design for a local small buisness website, particually,
   <div id="page_container">
       <div class="bg-text">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <img src="https://i0.wp.com/blacksburgwinelab.com/wp-content/uploads/2018/10/cropped-2018_04-06-Wine-Lab-Logo-1-100px-2.jpeg?fit=100%2C100" alt="" width="50px" height="50px">
-            <a class="navbar-brand" onclick="newPage(main_page)" href="#" style="margin-left: 10px;">Blacksburg Wine Lab<span class="sr-only">(current)</span></a>
+          <img onclick="newPage(main_page)" src="https://i0.wp.com/blacksburgwinelab.com/wp-content/uploads/2018/10/cropped-2018_04-06-Wine-Lab-Logo-1-100px-2.jpeg?fit=100%2C100" alt="" width="50px" height="50px">
+            <a class="navbar-brand" onclick="newPage(main_page)" href="#" style="margin-left: 10px;"><h2>Blacksburg Wine Lab</h2><span class="sr-only">(current)</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link" onclick="newPage(menu_page)" href="#">Menu</a>
+                  <a class="nav-link" onclick="newPage(food_page)" href="#">Food Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="newPage(region_page)" href="#">Featured Region</a>
+                    <a class="nav-link" onclick="newPage(wine_page)" href="#">Wine Menu</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" onclick="newPage(reservation_page)" href="#">Make A Reservation</a>
@@ -106,12 +106,22 @@ Description:    A mockup design for a local small buisness website, particually,
       </div>
       </div>
     </div>
-    <div id="menu_page">
-        <iframe src="http://docs.google.com/gview?url=http://blacksburgwinelab.com/wp-content/uploads/2019/06/wine-lab-6-18website-menu.pdf&embedded=true" style="width:718px; height:700px;" frameborder="0"></iframe> 
-        
+    <div id="food_page" style="display:none">
+      <div class="row">
+        <div class="col-6">
+          <h1>Food Menu</h1>
+        <iframe src="http://docs.google.com/gview?url=http://blacksburgwinelab.com/wp-content/uploads/2019/06/wine-lab-6-18website-menu.pdf&embedded=true" style="width:100%; height:500px;" frameborder="0"></iframe> 
+        </div>
+        <div class="col-6">
+            <h1>Brunch Menu</h1>
+          <iframe src="http://docs.google.com/gview?url=http://blacksburgwinelab.com/wp-content/uploads/2019/10/Brunch-Menu_10-6-19-2-sided.pdf&embedded=true" style="width:100%; height:500px;" frameborder="0"></iframe> 
+          </div>
+      </div>
     </div>
-    <div id="region_page">
-      <!-- (could be a copy of the mailing list) -->
+    <div id="wine_page">
+        <h1>Wine Menu & Featured Region</h1>
+        <iframe src="http://docs.google.com/gview?url=http://blacksburgwinelab.com/wp-content/uploads/2019/06/Wine-BTG-Menu-6-28-2019.docx&embedded=true" style="width:100%; height:500px;" frameborder="0"></iframe> 
+        </div>
     </div>
     <div id="reservation_page">
         <div class="row">
@@ -177,9 +187,6 @@ Description:    A mockup design for a local small buisness website, particually,
                 </div>
             </div>
         </div>
-    </div>
-    <div id="menu_page">
-
     </div>
     <div id="party_page">
       <div class="row">

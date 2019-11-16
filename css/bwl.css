@@ -13,10 +13,12 @@ img {
 #main_page{
     display: block;
 }
-#menu_page{
+#food_page{
+    height: 550px;
     display: hidden;
 }
-#region_page{
+#wine_page{
+    height: 500px;
     display: none;
 }
 #party_page{

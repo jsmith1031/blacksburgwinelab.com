@@ -4,7 +4,7 @@ function fixImage(size, image){
 
 }
 function newPage(id){
-  var ids = ["main_page", "menu_page", "reservation_page", "region_page", "party_page", "contact_page"];
+  var ids = ["main_page", "food_page", "reservation_page", "wine_page", "party_page", "contact_page"];
   var a = document.getElementById("main_page");
   for (i = 0; i < ids.length; i++) {
     var temp = document.getElementById(ids[i]);
