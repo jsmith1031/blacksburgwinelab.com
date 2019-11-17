@@ -17,13 +17,12 @@ function newPage(id){
   }
   console.log(id);
 }
-function checkDate(Date){
-  Date = this.Date;
-  var today = new Date(YYYY-MM-DD);
+function checkDate(TempDate){
+  var inputDate = new Date(TempDate);
+  var today = new Date();
   var valid_Date = true;
-  alert(today + " " + Date);
-  if(Date < today){
-    valid_Date == false;
+  if(inputDate < today){
+    valid_Date = false;
   }
   return valid_Date;
 }
@@ -40,60 +39,76 @@ function submitReservation(){
     var date = document.getElementById("date").value;
     console.log(date);
     if(checkDate(date) === false){
-      alert("please enter a date in the future");
+      alert("Please enter a date in the future");
     }else{
       alert("Reservation placed for " + name + " on " + date);
     }
   }catch(TypeError){
     alert("Please fill out all of the forms");
-    console.log("Name", name, "Email", email, phone, party, date);
+    console.log(" Name ", name, " Email ", email, " Phone ", phone, " Seats ", party, " Date ", date);
   }
 }
-
-/*
-function loadingElement() {
-    var a = document.getElementById("main_page");
-    var b = document.getElementById("menu_page");
-    var c = document.getElementById("region_page");
-    var d = document.getElementById("reservation_page");
-    var e = document.getElementById("party_page");
-    if (a.style.display === "none") {
-      a.style.dizsplay = "block";
-      b.style.display = "none";
-      c.style.display = "none";
-      d.style.display = "none";
-      e.style.display = "none";
-    } else {
-      a.style.display = "none";
-      b.style.display = "block";
-      c.style.display = "block";
-    }
-  }*/
-//document.getElementById("imageOne").src = "https://i.redd.it/yw09nlyl9lt31.jpg";
-/*
-function swap(){
-    if(document.getElementById("image").src=="https://i.redd.it/yw09nlyl9lt31.jpg"){
-        document.getElementById("image").src="https://i.redd.it/06ozylnfmm521.jpg";
+function resturantOpen(time, date){
+  var inputDate = new Date(date);
+  var day = inputDate.getDay();
+  var inputTime = new Date();
+  var pieces = time.split(':');
+  inputTime.setHours(parseInt(pieces[0]),parseInt(pieces[1]), 0);
+  //var opentimes = [new Date(10:00:00), new Date(16:00:00), new Date(20:00:00)];
+  //var closetimes = [new Date(21:00:00), new Date()];
+  if (day === 6){
+    var opentime = new Date();
+    opentime.setHours(10,00,0);
+    var closetime = new Date();
+    closetime.setHours(21,00,0);
+    console.log(time, inputTime, opentime, closetime);
+    if((inputTime >= opentime) & (inputTime <= closetime)){
+      return true;
     }else{
-        document.getElementById("image").src="https://i.redd.it/yw09nlyl9lt31.jpg";
+      return false;
     }
+  }else if (day >= 0 & day < 4){
+    var opentime = new Date();
+    opentime.setHours(16,00,0);
+    var closetime = new Date();
+    closetime.setHours(22,00,0);
+    console.log(time, inputTime, opentime, closetime);
+    if((inputTime >= opentime) & (inputTime <= closetime)){
+      return true;
+    }else{
+      return false;
+    }
+  }else{
+    var opentime = new Date();
+    opentime.setHours(12,00,0);
+    var closetime = new Date();
+    closetime.setHours(23,00,0);
+    console.log(time, inputTime, opentime, closetime);
+    if((inputTime >= opentime) & (inputTime <= closetime)){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  return true;
 }
-
-
-
-function DisplayImages(picture1){
-    document.write("<div class='slideshow'>",
-     "<ul>",
-       "<li>",
-        "<img src=\"", picture1,"\">",          
-         "<div>",
-            "<a href=\"", picture1, "\" title='Click to see full image' target='_blank'>",
-               "<img src=\"", picture1, "\" alt='Item 1' />",
-           "</a>",
-           "<p>'This is Item 1' </p>",
-       "</div></li>",
-       "</ul>",
-      "</div>");
+function regularReservation(){
+  try{
+    var name = document.getElementById("res_name").value;
+    var email = document.getElementById("res_email").value;
+    var phone = document.getElementById("res_phone").value;
+    var party = document.getElementById("res_size").value;
+    var date = document.getElementById("res_date").value;
+    var time = document.getElementById("res_time").value;
+    if(checkDate(date) === false){
+      alert("Please enter a date in the future");
+    }else if(resturantOpen(time, date) === false){
+      alert("Make sure the reservation time is set for when the resturant is open");
+    }else{
+      alert("Reservation placed for " + name + " on " + date + " at " + time);
+    }
+  }catch(TypeError){
+    alert("Please fill out all of the forms");
+    console.log(" Name ", name, " Email ", email, " Phone ", phone, " Seats ", party, " Date ", date, " Time ", time);
+  }
 }
-DisplayImages('https://scontent-iad3-1.cdninstagram.com/vp/78306ad799579ebbee6f172219657a71/5E5F1F8B/t51.2885-15/e35/s1080x1080/75225431_104058727653343_3757438024330105046_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=102');
-*/
