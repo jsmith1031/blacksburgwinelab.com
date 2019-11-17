@@ -18,21 +18,38 @@ function newPage(id){
   console.log(id);
 }
 function checkDate(Date){
-  var today = new Date();
+  Date = this.Date;
+  var today = new Date(YYYY-MM-DD);
   var valid_Date = true;
+  alert(today + " " + Date);
   if(Date < today){
-    valid_Date = false;
+    valid_Date == false;
   }
   return valid_Date;
 }
 function submitReservation(){
-  var name = document.getElementById('name').value;
-  var email = document.getElementById("email").value;
-  var phone = document.getElementById("phone").value;
-  var party = document.getElementById("size").value;
-  var date = document.getElementById("date").value;
-  
+  try{
+    var name = document.getElementById("name").value;
+    
+    var email = document.getElementById("email").value;
+    
+    var phone = document.getElementById("phone").value;
+    
+    var party = document.getElementById("size").value;
+    
+    var date = document.getElementById("date").value;
+    console.log(date);
+    if(checkDate(date) === false){
+      alert("please enter a date in the future");
+    }else{
+      alert("Reservation placed for " + name + " on " + date);
+    }
+  }catch(TypeError){
+    alert("Please fill out all of the forms");
+    console.log("Name", name, "Email", email, phone, party, date);
+  }
 }
+
 /*
 function loadingElement() {
     var a = document.getElementById("main_page");
