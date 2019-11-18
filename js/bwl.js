@@ -39,7 +39,7 @@ function submitReservation(){
     console.log(date);
     if(checkDate(date) === false){
       alert("Please enter a date in the future");
-    }else{
+    }else if (checkDate(date) === true){
       alert("Reservation placed for " + name + " on " + date);
     }
   }catch(TypeError){
