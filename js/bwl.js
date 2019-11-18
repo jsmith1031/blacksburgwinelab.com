@@ -10,7 +10,6 @@ function newPage(id){
     var temp = document.getElementById(ids[i]);
     if (temp === id){
       temp.style.display = "block";
-      console.log(temp);
     } else {
       temp.style.display = "none";
     }
