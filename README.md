@@ -13,6 +13,7 @@ The goal of this project is to create a 6 page website that demonstrates a good 
 * Need to add Email list fourm
 * Update pictures since the instagram links are broken
 * Add easier way to update the menus by casting the .pdf link into the google docs interpreter
+**  google docs interpreter may no longer be supported, update to new previewer
 * Add a box container (something that grabs your attention but also not distaracting) to show information about the address changing and when the move is
 * Address is missing
 * Phone Number is missing
