@@ -5,7 +5,8 @@ A Blacksburg Wine Lab Demo website. Designed by Jeffrey Smith for ITEC 225 and p
 -Semester:   Fall 2019 
 -Date:       Nov. 14th, 2019
 -Email:      jsmith1031@radford.edu
-
+# [Preview Link](https://jsmith1031.github.io/blacksburgwinelab.com/bwl.html)
+[https://jsmith1031.github.io/blacksburgwinelab.com/bwl.html](https://jsmith1031.github.io/blacksburgwinelab.com/bwl.html)
 ## Description 
 The goal of this project is to create a 6 page website that demonstrates a good understanding of the Bootstrap and JQuery/Javascript Frameworks.
 
