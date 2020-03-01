@@ -2,3 +2,4 @@ reservation_handler.adb
 reservation_handler.ali
 reservation_handler.o
 .reservation_handler
+.DS_Store
