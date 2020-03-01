@@ -1,14 +1,24 @@
 # blacksburgwinelab.com
-A Blacksburg Wine Lab Demo website. Designed by Jeffrey Smith for ITEC 225 and possibly Blacksburg Wine Lab Incorporated.
+The Blacksburg Wine Lab website. Designed by Jeffrey Smith for ITEC 225 and possibly Blacksburg Wine Lab Incorporated.
+
 -Name:       Jeffrey Smith
--Course:     ITEC 225 
--Semester:   Fall 2019 
--Date:       Nov. 14th, 2019
+
+-Course:     ITEC 225 at Radford University
+
+-Semester:   Fall 2019 and Spring 2020
+
 -Email:      jsmith1031@radford.edu
 # [Preview Link](https://jsmith1031.github.io/blacksburgwinelab.com/bwl.html)
 [https://jsmith1031.github.io/blacksburgwinelab.com/bwl.html](https://jsmith1031.github.io/blacksburgwinelab.com/bwl.html)
 ## Description 
-The goal of this project is to create a 6 page website that demonstrates a good understanding of the Bootstrap and JQuery/Javascript Frameworks.
+This project is a collaboration between students in Virginia Tech Project Management and Radford Computer Science to build a website for Blacksbrg Wine Lab without using templates provided by website builders like WordPress which BlacksburgWineLab.com is current deployed on. The backend of the website uses the Revel API to connect to the iPADs in the resturant to send reservations from the website to the ticket printer in the Wine Lab. The major advantage of manually creating the reservation system rather than using a framework like OpenTable is that we can better securly handle the API keys and do more wiht the data such as sending it to the printers in the Wine Lab.
+
+## Front End
+Bootstrap and JQuery
+
+## Backend
+SparkAda for temporary storage of reservation tickets and secure API key handling
+RevelAPI suite for passing reservation tickets from BlacksburgWineLab.com to the iPad POS
 
 ## Missing Details / Content to add later
 * Need to add Email list fourm
