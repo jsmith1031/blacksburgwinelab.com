@@ -11,7 +11,7 @@ The Blacksburg Wine Lab website. Designed by Jeffrey Smith for ITEC 225 and poss
 # [Preview Link](https://jsmith1031.github.io/blacksburgwinelab.com/bwl.html)
 [https://jsmith1031.github.io/blacksburgwinelab.com/bwl.html](https://jsmith1031.github.io/blacksburgwinelab.com/bwl.html)
 ## Description 
-This project is a collaboration between students in Virginia Tech Project Management and Radford Computer Science to build a website for Blacksbrg Wine Lab without using templates provided by website builders like WordPress which BlacksburgWineLab.com is current deployed on. The backend of the website uses the Revel API to connect to the iPADs in the resturant to send reservations from the website to the ticket printer in the Wine Lab. The major advantage of manually creating the reservation system rather than using a framework like OpenTable is that we can better securly handle the API keys and do more wiht the data such as sending it to the printers in the Wine Lab.
+This project is a collaboration between students in Virginia Tech Project Management and Radford Computer Science to build a website for Blacksbrg Wine Lab without using templates provided by website builders like WordPress which BlacksburgWineLab.com is current deployed on. The backend of the website uses the Revel API to connect to the iPADs in the resturant to send reservations from the website to the ticket printer in the Wine Lab. The major advantage of manually creating the reservation system rather than using a framework like OpenTable is that we can securly handle the API keys and do more with the data such as sending it to the printers in the Wine Lab.
 
 ## Front End
 Bootstrap and JQuery
