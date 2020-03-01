@@ -20,3 +20,4 @@ The goal of this project is to create a 6 page website that demonstrates a good 
 * Phone Number is missing
 * Reservating needs to be connected to POS API
 * Add social links in navbar
+* Move reservation contstraints from front end Javascript to backend API
