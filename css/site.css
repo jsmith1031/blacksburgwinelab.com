@@ -324,9 +324,6 @@ address { font-style: normal; font-size: 1.2rem; line-height: 1.5; margin-bottom
 .intro.is-skipped .intro-inner { animation-delay: 0s; animation-duration: .45s; }
 .intro-skipped .hero-photo, .intro-skipped .hero-copy > *, .intro-skipped .hero-status, .intro-skipped .site-header { animation-delay: 0s; }
 
-.no-intro .intro { display: none; }
-.no-intro .hero-photo, .no-intro .hero-copy > *, .no-intro .hero-status, .no-intro .site-header { animation: none; }
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .intro { display: none; }

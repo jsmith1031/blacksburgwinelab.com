@@ -32,7 +32,7 @@ python3 -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
-The opening animation plays once per browser tab. To see it again, open the page in a new tab.
+The opening animation plays on every page load. Click anywhere to skip it.
 
 ## Project layout
 
