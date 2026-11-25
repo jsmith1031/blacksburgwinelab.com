@@ -48,8 +48,11 @@
       if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') skipIntro();
       document.removeEventListener('keydown', onKey);
     });
-    intro.addEventListener('animationend', function (e) {
+    intro.addEventListener('transitionend', function (e) {
       if (e.target === intro) intro.remove();
+    });
+    intro.addEventListener('animationend', function (e) {
+      if (e.animationName === 'intro-done') intro.remove();
     });
   }
 
@@ -78,147 +81,62 @@
     if (e.target.closest('a')) setNav(false);
   });
 
-  /* ----- Food and wine showcase: a ring of photos that turns in 3D ----- */
+  /* ----- Landing screen: the web of options and the panel they open ----- */
 
-  (function () {
-    var hero = document.getElementById('top');
-    var stage = document.getElementById('stage');
-    var ring = document.getElementById('ring');
-    var caption = document.getElementById('caption');
-    if (!stage || !ring) return;
+  var hero = document.getElementById('top');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    var cards = Array.prototype.slice.call(ring.children);
-    var STEP = 360 / cards.length;
-    var IDLE_SPEED = 7;             // degrees per second while nobody is touching it
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    var angle = 0;                  // current rotation of the ring, in degrees
-    var target = null;              // angle to ease towards after a button, key or drag
-    var velocity = 0;               // degrees per second carried over from a drag
-    var dragging = false;
-    var idle = !reduceMotion;
-    var idleTimer = null;
-    var front = -1;
-    var last = performance.now();
-
-    cards.forEach(function (card, i) { card.style.setProperty('--i', i); });
-
-    function frontIndex() {
-      var n = cards.length;
-      return ((Math.round(-angle / STEP) % n) + n) % n;
-    }
-
-    function render() {
-      ring.style.setProperty('--turn', angle + 'deg');
-      cards.forEach(function (card, i) {
-        // 1 when the card faces the visitor, -1 when it is at the back of the ring.
-        var facing = Math.cos((i * STEP + angle) * Math.PI / 180);
-        card.style.setProperty('--lit', (0.42 + 0.58 * Math.max(0, facing)).toFixed(3));
-      });
-      var index = frontIndex();
-      if (index !== front) {
-        front = index;
-        caption.innerHTML = '';
-        var name = document.createElement('strong');
-        var note = document.createElement('span');
-        name.textContent = cards[index].getAttribute('data-name');
-        note.textContent = cards[index].getAttribute('data-note');
-        caption.appendChild(name);
-        caption.appendChild(note);
-      }
-    }
-
-    function pauseIdle() {
-      idle = false;
-      clearTimeout(idleTimer);
-      if (!reduceMotion) idleTimer = setTimeout(function () { idle = true; }, 6000);
-    }
-
-    function snap() { target = Math.round(angle / STEP) * STEP; }
-
-    function turnBy(steps) {
-      pauseIdle();
-      velocity = 0;
-      var base = target === null ? Math.round(angle / STEP) * STEP : target;
-      target = base - steps * STEP;
-      // Only announce the caption to screen readers when the visitor asked for the change.
-      caption.setAttribute('aria-live', 'polite');
-    }
-
-    function tick(now) {
-      var dt = Math.min(0.05, (now - last) / 1000);
-      last = now;
-      if (!dragging) {
-        if (Math.abs(velocity) > 4) {
-          angle += velocity * dt;
-          velocity *= Math.pow(0.04, dt);
-          if (Math.abs(velocity) <= 4) { velocity = 0; snap(); }
-        } else if (target !== null) {
-          var gap = target - angle;
-          if (Math.abs(gap) < 0.05) { angle = target; target = null; }
-          else angle += gap * Math.min(1, dt * 7);
-        } else if (idle) {
-          angle -= IDLE_SPEED * dt;
-        }
-      }
-      render();
-      requestAnimationFrame(tick);
-    }
-
-    // Drag or swipe to spin.
-    var startX = 0, startAngle = 0, lastX = 0, lastT = 0;
-    stage.addEventListener('pointerdown', function (e) {
-      dragging = true;
-      target = null;
-      velocity = 0;
-      startX = lastX = e.clientX;
-      startAngle = angle;
-      lastT = performance.now();
-      caption.setAttribute('aria-live', 'off');
-      pauseIdle();
-      stage.classList.add('is-dragging');
-      stage.setPointerCapture(e.pointerId);
+  // The lights and the orbs lean a little towards the pointer.
+  if (hero && !reduceMotion && window.matchMedia('(hover: hover)').matches) {
+    hero.addEventListener('pointermove', function (e) {
+      var box = hero.getBoundingClientRect();
+      hero.style.setProperty('--px', ((e.clientX - box.left) / box.width * 2 - 1).toFixed(3));
+      hero.style.setProperty('--py', ((e.clientY - box.top) / box.height * 2 - 1).toFixed(3));
     });
-    stage.addEventListener('pointermove', function (e) {
-      if (!dragging) return;
-      var now = performance.now();
-      var perPixel = 0.32;
-      angle = startAngle + (e.clientX - startX) * perPixel;
-      if (now > lastT) velocity = (e.clientX - lastX) * perPixel / ((now - lastT) / 1000);
-      lastX = e.clientX;
-      lastT = now;
-    });
-    function endDrag() {
-      if (!dragging) return;
-      dragging = false;
-      stage.classList.remove('is-dragging');
-      if (performance.now() - lastT > 120) velocity = 0;
-      velocity = Math.max(-500, Math.min(500, velocity));
-      if (Math.abs(velocity) <= 4) snap();
-      pauseIdle();
-    }
-    stage.addEventListener('pointerup', endDrag);
-    stage.addEventListener('pointercancel', endDrag);
+  }
 
-    document.getElementById('prevCard').addEventListener('click', function () { turnBy(-1); });
-    document.getElementById('nextCard').addEventListener('click', function () { turnBy(1); });
-    document.getElementById('showcase').addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft') { turnBy(-1); e.preventDefault(); }
-      if (e.key === 'ArrowRight') { turnBy(1); e.preventDefault(); }
-    });
+  // Choosing an option lifts that section of the page into a panel, then puts it back on close.
+  var sheet = document.getElementById('sheet');
+  var sheetBody = document.getElementById('sheetBody');
+  var borrowed = null;   // the section currently shown in the panel
+  var marker = null;     // remembers where it came from
 
-    // The lights and the ring lean a little towards the pointer.
-    if (!reduceMotion && window.matchMedia('(hover: hover)').matches) {
-      hero.addEventListener('pointermove', function (e) {
-        var box = hero.getBoundingClientRect();
-        hero.style.setProperty('--px', ((e.clientX - box.left) / box.width * 2 - 1).toFixed(3));
-        hero.style.setProperty('--py', ((e.clientY - box.top) / box.height * 2 - 1).toFixed(3));
-      });
-    }
+  function returnSection() {
+    if (borrowed && marker) marker.replaceWith(borrowed);
+    borrowed = marker = null;
+  }
 
-    render();
-    requestAnimationFrame(tick);
-  })();
+  function openSheet(id) {
+    var section = document.getElementById(id);
+    if (!section || !sheet || typeof sheet.showModal !== 'function') return false;
+    if (sheet.open) sheet.close();
+    returnSection();
+    marker = document.createComment('section ' + id);
+    section.replaceWith(marker);
+    sheetBody.appendChild(section);
+    // Photos further down the page may not have loaded yet.
+    section.querySelectorAll('img[loading="lazy"]').forEach(function (img) { img.loading = 'eager'; });
+    borrowed = section;
+    var heading = section.querySelector('h2');
+    sheet.setAttribute('aria-label', heading ? heading.textContent : 'Details');
+    sheet.showModal();
+    sheet.scrollTop = 0;
+    return true;
+  }
+
+  if (sheet) {
+    sheet.addEventListener('close', returnSection);
+    document.getElementById('sheetClose').addEventListener('click', function () { sheet.close(); });
+    // A click on the dimmed area outside the panel closes it.
+    sheet.addEventListener('click', function (e) { if (e.target === sheet) sheet.close(); });
+  }
+
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('[data-open]');
+    if (!link) return;
+    // Without panel support the link still works as an ordinary jump down the page.
+    if (openSheet(link.getAttribute('data-open'))) e.preventDefault();
+  });
 
   /* ----- Open or closed right now ----- */
 

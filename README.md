@@ -15,9 +15,9 @@ The front end is finished and described below. The point-of-sale connection is n
 | Section | What it does |
 | --- | --- |
 | Opening | The Wine Lab logo assembles on a dark screen, then the screen closes into it to reveal the page. |
-| Hero | Headline and reserve button over the pendant lights, a 3D ring of food and wine photos to spin by drag, arrow keys or buttons, and a line showing whether the Wine Lab is open right now. |
+| Landing screen | A framed photo of the pendant lights, placed exactly where the opening logo is drawn, with six photo orbs around it: food menu, drink menu, reserve a table, private events, our story, hours and location. Choosing one opens that section in a panel, so nothing needs scrolling. Also shows whether the Wine Lab is open right now. |
 | Our story | How a Virginia Tech geography of wine course became a wine bar. |
-| Food and drink | Photos and lists of what they serve, with a link to the current menus. |
+| Food menu, drink menu | Photos and lists of what they serve, with a link to the current menus. |
 | Private events | How to book part of the dining room for a group. |
 | Reserve a table | A request form with the opening hours beside it. |
 | Hours and location | Address, parking, contact details and a map. |

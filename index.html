@@ -71,7 +71,7 @@
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="#story">Our story</a>
-      <a href="#menu">Food and drink</a>
+      <a href="#food">Food and drink</a>
       <a href="#events">Private events</a>
       <a href="#visit">Hours and location</a>
       <a class="btn btn-solid" href="#reserve">Reserve a table</a>
@@ -81,43 +81,36 @@
   <main id="main">
 
     <section class="hero" id="top">
-      <div class="hero-bg" aria-hidden="true">
-        <img class="hero-soft" src="images/photos/lights-soft.jpg" alt="">
-        <img class="hero-photo" src="images/photos/lights.jpg" alt="">
+      <img class="hero-soft" src="images/photos/lights-soft.jpg" alt="" aria-hidden="true">
+
+      <!-- The pendant lights sit in the middle; each option hangs off them like a grape on the logo. -->
+      <div class="web" id="web">
+        <svg class="web-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="50" y1="50" x2="20" y2="15" style="--i:0"/>
+          <line x1="50" y1="50" x2="80" y2="15" style="--i:1"/>
+          <line x1="50" y1="50" x2="8" y2="50" style="--i:2"/>
+          <line x1="50" y1="50" x2="92" y2="50" style="--i:3"/>
+          <line x1="50" y1="50" x2="21" y2="85" style="--i:4"/>
+          <line x1="50" y1="50" x2="79" y2="85" style="--i:5"/>
+        </svg>
+        <div class="frame">
+          <img class="hero-photo" src="images/photos/lights.jpg" alt="A cluster of faceted pendant lights hanging in the Wine Lab, shaped like a bunch of grapes.">
+        </div>
+        <ul class="orbs" aria-label="Explore the Wine Lab">
+          <li style="--x:20%;--y:15%;--i:0"><a class="orb" href="#food" data-open="food"><img src="images/photos/orbs/food.jpg" alt="" width="140" height="140"><span>Food menu</span></a></li>
+          <li style="--x:80%;--y:15%;--i:1"><a class="orb" href="#reserve" data-open="reserve"><img src="images/photos/orbs/reserve.jpg" alt="" width="140" height="140"><span>Reserve a table</span></a></li>
+          <li style="--x:8%;--y:50%;--i:2"><a class="orb" href="#drinks" data-open="drinks"><img src="images/photos/orbs/drinks.jpg" alt="" width="140" height="140"><span>Drink menu</span></a></li>
+          <li style="--x:92%;--y:50%;--i:3"><a class="orb" href="#events" data-open="events"><img src="images/photos/orbs/events.jpg" alt="" width="140" height="140"><span>Private events</span></a></li>
+          <li style="--x:21%;--y:85%;--i:4"><a class="orb" href="#story" data-open="story"><img src="images/photos/orbs/story.jpg" alt="" width="140" height="140"><span>Our story</span></a></li>
+          <li style="--x:79%;--y:85%;--i:5"><a class="orb" href="#visit" data-open="visit"><img src="images/photos/orbs/visit.jpg" alt="" width="140" height="140"><span>Hours and location</span></a></li>
+        </ul>
       </div>
 
       <div class="hero-copy">
         <h1>Wine is a beautiful experiment.</h1>
-        <p class="hero-lede">A wine bar, bottle shop and kitchen in downtown Blacksburg. Every bottle is different, so come try a few.</p>
-        <div class="hero-actions">
-          <a class="btn btn-solid" href="#reserve">Reserve a table</a>
-          <a class="btn btn-ghost" href="#menu">See what we serve</a>
-        </div>
+        <p class="hero-lede">A wine bar, bottle shop and kitchen in downtown Blacksburg.</p>
+        <p class="hero-status" id="status" aria-live="polite">223 Gilbert Street, Blacksburg</p>
       </div>
-
-      <div class="showcase" id="showcase" role="group" aria-roledescription="carousel" aria-label="What we serve">
-        <div class="stage" id="stage">
-          <ul class="ring" id="ring">
-            <li class="card" data-name="Cheese and charcuterie" data-note="Built to order, with fresh local bread"><img src="images/photos/board.jpg" alt="A cheese and charcuterie board with cured meats, cheeses, pickles and crackers." draggable="false"></li>
-            <li class="card" data-name="Wine flights" data-note="Taste a region side by side"><img src="images/photos/glasses.jpg" alt="A glass of red and a glass of white wine on a wooden table." draggable="false"></li>
-            <li class="card" data-name="Oysters on the half shell" data-note="Wednesday to Saturday"><img src="images/photos/oysters.jpg" alt="A dozen oysters on the half shell arranged on ice." draggable="false"></li>
-            <li class="card" data-name="Wine by the glass and bottle" data-note="Pick from the wall, or ask us"><img src="images/photos/carafe.jpg" alt="A carafe and a glass of red wine on a table." draggable="false"></li>
-            <li class="card" data-name="Tinned seafood" data-note="The finest collection in Virginia"><img src="images/photos/tinned.jpg" alt="An open tin of seafood served on a board with cheese, greens and crisps." draggable="false"></li>
-            <li class="card" data-name="Cocktails" data-note="Plus bourbon, craft beer and cider"><img src="images/photos/cocktails.jpg" alt="Two cocktails, one pale pink and one deep red with a mint garnish." draggable="false"></li>
-          </ul>
-        </div>
-        <div class="showcase-bar">
-          <button class="round" id="prevCard" type="button" aria-label="Previous">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-          </button>
-          <p class="showcase-caption" id="caption" aria-live="polite"><strong>Cheese and charcuterie</strong><span>Built to order, with fresh local bread</span></p>
-          <button class="round" id="nextCard" type="button" aria-label="Next">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-          </button>
-        </div>
-      </div>
-
-      <p class="hero-status" id="status" aria-live="polite">223 Gilbert Street, Blacksburg</p>
     </section>
 
     <section class="story wrap" id="story">
@@ -132,36 +125,26 @@
       </figure>
     </section>
 
-    <section class="menu" id="menu">
+    <section class="menu" id="food">
       <div class="wrap">
         <div class="section-head">
-          <h2>On the table, in the glass</h2>
+          <h2>On the table</h2>
           <p>The menu changes often, because we serve what local farmers and bakers have right now. These are the things people come back for.</p>
         </div>
-
         <div class="mosaic">
-          <figure class="tile tile-board">
+          <figure class="tile">
             <img src="images/photos/board.jpg" alt="A cheese and charcuterie board with cured meats, cheeses, pickles and crackers." loading="lazy">
             <figcaption><strong>Cheese and charcuterie</strong> Built to order, with fresh local bread</figcaption>
           </figure>
-          <figure class="tile tile-glasses">
-            <img src="images/photos/glasses.jpg" alt="A glass of red and a glass of white wine on a wooden table." loading="lazy">
-            <figcaption><strong>Wine flights</strong> Taste a region side by side</figcaption>
-          </figure>
-          <figure class="tile tile-oysters">
+          <figure class="tile">
             <img src="images/photos/oysters.jpg" alt="A dozen oysters on the half shell arranged on ice." loading="lazy">
             <figcaption><strong>Oysters on the half shell</strong> Wednesday to Saturday</figcaption>
           </figure>
-          <figure class="tile tile-tinned">
+          <figure class="tile">
             <img src="images/photos/tinned.jpg" alt="An open tin of seafood served on a board with cheese, greens and crisps." loading="lazy">
             <figcaption><strong>Tinned seafood</strong> The finest collection in Virginia</figcaption>
           </figure>
-          <figure class="tile tile-cocktails">
-            <img src="images/photos/cocktails.jpg" alt="Two cocktails, one pale pink and one deep red with a mint garnish." loading="lazy">
-            <figcaption><strong>Cocktails</strong> Plus bourbon, craft beer and cider</figcaption>
-          </figure>
         </div>
-
         <div class="menu-lists">
           <div>
             <h3>To eat</h3>
@@ -181,19 +164,55 @@
               <li>Served with local breads and crackers</li>
             </ul>
           </div>
+          <div class="menu-link">
+            <p>For this week's full food menu:</p>
+            <a class="btn btn-line" href="https://www.winelab.com/menus" target="_blank" rel="noopener">View current menus</a>
+            <a class="text-link" href="https://order.spoton.com/so-blacksburg-wine-lab-9768/blacksburg-va/6244ccd99adef31f5eaafb27" target="_blank" rel="noopener">Order takeout</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu" id="drinks">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>In the glass</h2>
+          <p>Not sure what you like yet? Try a few side by side. That is the whole idea of a wine lab.</p>
+        </div>
+        <div class="mosaic">
+          <figure class="tile">
+                <figcaption><strong>Wine by the glass and bottle</strong> Pick from the wall, or ask us</figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="images/photos/glasses.jpg" alt="A glass of red and a glass of white wine on a wooden table." loading="lazy">
+            <figcaption><strong>Wine flights</strong> Taste a region side by side</figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="images/photos/cocktails.jpg" alt="Two cocktails, one pale pink and one deep red with a mint garnish." loading="lazy">
+            <figcaption><strong>Cocktails</strong> Plus bourbon, craft beer and cider</figcaption>
+          </figure>
+        </div>
+        <div class="menu-lists">
           <div>
-            <h3>To drink</h3>
+            <h3>Wine</h3>
             <ul>
-              <li>Wines by the glass and bottle</li>
-              <li>Wine and spirit flights</li>
+              <li>By the glass and by the bottle</li>
+              <li>Wine flights</li>
+              <li>Bottles to take home</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Everything else</h3>
+            <ul>
               <li>Cocktails and mocktails</li>
-              <li>Bourbon, craft beer and cider</li>
+              <li>Spirit flights and bourbon</li>
+              <li>Craft beer and cider</li>
             </ul>
           </div>
           <div class="menu-link">
-            <p>For this week's full food and beverage menus:</p>
+            <p>For this week's full beverage menu:</p>
             <a class="btn btn-line" href="https://www.winelab.com/menus" target="_blank" rel="noopener">View current menus</a>
-            <a class="text-link" href="https://order.spoton.com/so-blacksburg-wine-lab-9768/blacksburg-va/6244ccd99adef31f5eaafb27" target="_blank" rel="noopener">Order takeout</a>
+            <a class="text-link" href="#reserve" data-open="reserve">Reserve a table</a>
           </div>
         </div>
       </div>
@@ -202,7 +221,6 @@
     <section class="strip" aria-label="Photos of the Wine Lab">
       <div class="strip-track" tabindex="0">
         <img src="images/photos/hero.jpg" alt="The dining room in the evening, with wood tables under strings of warm bulbs." loading="lazy">
-        <img src="images/photos/pairing.jpg" alt="Glasses of red and white wine beside a plate of cheese and spreads." loading="lazy">
         <img src="images/photos/cheese-case.jpg" alt="The cheese case, stocked with wheels and wedges." loading="lazy">
         <img src="images/photos/bar.jpg" alt="The bar, with pendant lights and the wine shelves behind the dining room." loading="lazy">
         <img src="images/photos/carafe.jpg" alt="A carafe and a glass of red wine on a table." loading="lazy">
@@ -315,6 +333,12 @@
       <p class="footer-note">Website by Jeffrey Smith. Photos from the Wine Lab's Google listing.</p>
     </div>
   </footer>
+
+  <!-- Options chosen from the landing screen open here, so nobody has to scroll to find them. -->
+  <dialog class="sheet" id="sheet" aria-label="Details">
+    <button class="sheet-close" id="sheetClose" type="button">Close</button>
+    <div class="sheet-body" id="sheetBody"></div>
+  </dialog>
 
   <script src="js/site.js"></script>
 </body>
