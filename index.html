@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Young+Serif&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="images/photos/hero.jpg">
+  <link rel="preload" as="image" href="images/photos/lights.jpg">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
@@ -81,7 +81,11 @@
   <main id="main">
 
     <section class="hero" id="top">
-      <img class="hero-photo" src="images/photos/hero.jpg" alt="The Wine Lab dining room in the evening, with wood tables under strings of warm bulbs and the wine wall beyond.">
+      <div class="hero-bg" aria-hidden="true">
+        <img class="hero-soft" src="images/photos/lights-soft.jpg" alt="">
+        <img class="hero-photo" src="images/photos/lights.jpg" alt="">
+      </div>
+
       <div class="hero-copy">
         <h1>Wine is a beautiful experiment.</h1>
         <p class="hero-lede">A wine bar, bottle shop and kitchen in downtown Blacksburg. Every bottle is different, so come try a few.</p>
@@ -90,6 +94,29 @@
           <a class="btn btn-ghost" href="#menu">See what we serve</a>
         </div>
       </div>
+
+      <div class="showcase" id="showcase" role="group" aria-roledescription="carousel" aria-label="What we serve">
+        <div class="stage" id="stage">
+          <ul class="ring" id="ring">
+            <li class="card" data-name="Cheese and charcuterie" data-note="Built to order, with fresh local bread"><img src="images/photos/board.jpg" alt="A cheese and charcuterie board with cured meats, cheeses, pickles and crackers." draggable="false"></li>
+            <li class="card" data-name="Wine flights" data-note="Taste a region side by side"><img src="images/photos/glasses.jpg" alt="A glass of red and a glass of white wine on a wooden table." draggable="false"></li>
+            <li class="card" data-name="Oysters on the half shell" data-note="Wednesday to Saturday"><img src="images/photos/oysters.jpg" alt="A dozen oysters on the half shell arranged on ice." draggable="false"></li>
+            <li class="card" data-name="Wine by the glass and bottle" data-note="Pick from the wall, or ask us"><img src="images/photos/carafe.jpg" alt="A carafe and a glass of red wine on a table." draggable="false"></li>
+            <li class="card" data-name="Tinned seafood" data-note="The finest collection in Virginia"><img src="images/photos/tinned.jpg" alt="An open tin of seafood served on a board with cheese, greens and crisps." draggable="false"></li>
+            <li class="card" data-name="Cocktails" data-note="Plus bourbon, craft beer and cider"><img src="images/photos/cocktails.jpg" alt="Two cocktails, one pale pink and one deep red with a mint garnish." draggable="false"></li>
+          </ul>
+        </div>
+        <div class="showcase-bar">
+          <button class="round" id="prevCard" type="button" aria-label="Previous">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <p class="showcase-caption" id="caption" aria-live="polite"><strong>Cheese and charcuterie</strong><span>Built to order, with fresh local bread</span></p>
+          <button class="round" id="nextCard" type="button" aria-label="Next">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
       <p class="hero-status" id="status" aria-live="polite">223 Gilbert Street, Blacksburg</p>
     </section>
 
@@ -174,6 +201,7 @@
 
     <section class="strip" aria-label="Photos of the Wine Lab">
       <div class="strip-track" tabindex="0">
+        <img src="images/photos/hero.jpg" alt="The dining room in the evening, with wood tables under strings of warm bulbs." loading="lazy">
         <img src="images/photos/pairing.jpg" alt="Glasses of red and white wine beside a plate of cheese and spreads." loading="lazy">
         <img src="images/photos/cheese-case.jpg" alt="The cheese case, stocked with wheels and wedges." loading="lazy">
         <img src="images/photos/bar.jpg" alt="The bar, with pendant lights and the wine shelves behind the dining room." loading="lazy">
