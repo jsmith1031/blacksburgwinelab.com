@@ -56,6 +56,10 @@
     });
   }
 
+  // A refresh always starts at the top of the page.
+  window.scrollTo(0, 0);
+  window.addEventListener('pageshow', function () { window.scrollTo(0, 0); });
+
   /* ----- Header ----- */
 
   var header = document.getElementById('header');

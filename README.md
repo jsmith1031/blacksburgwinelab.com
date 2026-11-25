@@ -12,15 +12,15 @@ The front end is finished and described below. The point-of-sale connection is n
 
 ## What's on the page
 
-| Section | What it does |
+The site is a single screen. Nothing sits below it to scroll through.
+
+| Part | What it does |
 | --- | --- |
-| Opening | The Wine Lab logo assembles on a dark screen, then the screen closes into it to reveal the page. |
-| Landing screen | A framed photo of the pendant lights, placed exactly where the opening logo is drawn, with six photo orbs around it: food menu, drink menu, reserve a table, private events, our story, hours and location. Choosing one opens that section in a panel, so nothing needs scrolling. Also shows whether the Wine Lab is open right now. |
-| Our story | How a Virginia Tech geography of wine course became a wine bar. |
-| Food menu, drink menu | Photos and lists of what they serve, with a link to the current menus. |
-| Private events | How to book part of the dining room for a group. |
-| Reserve a table | A request form with the opening hours beside it. |
-| Hours and location | Address, parking, contact details and a map. |
+| Opening | The Wine Lab logo assembles on a dark screen, then fades to reveal the pendant lights in the same spot. Plays on every load. |
+| Landing screen | A framed photo of the pendant lights with six photo orbs around it, and a line showing whether the Wine Lab is open right now. |
+| Panels | Each orb, and each link in the top menu, opens one section in a panel over the landing screen: food menu, drink menu, reserve a table, private events, our story, hours and location. |
+
+With JavaScript turned off, the same sections appear as an ordinary page below the landing screen.
 
 ## Run it locally
 
